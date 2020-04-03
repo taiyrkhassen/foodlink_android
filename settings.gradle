@@ -1,0 +1,2 @@
+rootProject.name='foodlink_android'
+include ':app'
