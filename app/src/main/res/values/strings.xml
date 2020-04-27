@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">foodlink_android</string>
+    <string name="no_network_available" />
+    <string name="check_connected_wifi" />
 </resources>
