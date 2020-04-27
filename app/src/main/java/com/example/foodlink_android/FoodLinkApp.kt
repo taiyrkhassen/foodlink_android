@@ -2,7 +2,10 @@ package com.example.foodlink_android
 
 import android.app.Activity
 import android.app.Application
+import com.example.foodlink_android.constants.ApiConstants.BASE_URL
 import com.example.foodlink_android.di.components.AppComponent
+import com.example.foodlink_android.di.components.DaggerAppComponent
+import com.example.foodlink_android.di.components.DaggerServiceComponent
 import com.example.foodlink_android.di.components.ServiceComponent
 import com.example.foodlink_android.di.modules.AppModule
 
@@ -24,21 +27,21 @@ class FoodLinkApp : Application(){
 
     override fun onCreate() {
         super.onCreate()
-//        createAppComponent()
-//        createServiceComponent()
+        createAppComponent()
+        createServiceComponent()
     }
 
-//    private fun createAppComponent() {
-//        appComponent = DaggerAppComponent
-//            .builder()
-//            .appModule(AppModule(this, BASE_URL))
-//            .build()
-//    }
-//
-//    private fun createServiceComponent() {
-//        serviceComponent = DaggerServiceComponent
-//            .builder()
-//            .appComponent(appComponent)
-//            .build()
-//    }
+    private fun createAppComponent() {
+        appComponent = DaggerAppComponent
+            .builder()
+            .appModule(AppModule(this, BASE_URL))
+            .build()
+    }
+
+    private fun createServiceComponent() {
+        serviceComponent = DaggerServiceComponent
+            .builder()
+            .appComponent(appComponent)
+            .build()
+    }
 }

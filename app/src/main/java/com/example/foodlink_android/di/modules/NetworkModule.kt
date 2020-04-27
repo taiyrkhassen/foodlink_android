@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.util.Log
+import com.example.foodlink_android.helpers.NoInternetConnectInterceptor
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import dagger.Module
 import dagger.Provides
@@ -50,26 +51,26 @@ class NetworkModule {
         return logging
     }
 
-//    //we can catch this exception in interceptor and call NoInternetConnection activity for example
-//    @Provides
-//    fun okHttpClient(
-//        interceptor: Interceptor,
-//        httpLoggingInterceptor: HttpLoggingInterceptor,
-//        noInternetConnectInterceptor: NoInternetConnectInterceptor
-//    ): OkHttpClient {
-//        return OkHttpClient().newBuilder()
-//            .connectTimeout(15, TimeUnit.SECONDS)
-//            .readTimeout(15, TimeUnit.SECONDS)
-//            .writeTimeout(15, TimeUnit.SECONDS)
-//            .addInterceptor(httpLoggingInterceptor)
-//            .addInterceptor(noInternetConnectInterceptor)
-//            .addInterceptor(StethoInterceptor())
-//            .addNetworkInterceptor(interceptor)
-//            .build()
-//    }
-//
-//    @Provides
-//    fun internetConnectionInterceptor(context: Context): NoInternetConnectInterceptor {
-//        return NoInternetConnectInterceptor(context)
-//    }
+    //we can catch this exception in interceptor and call NoInternetConnection activity for example
+    @Provides
+    fun okHttpClient(
+        interceptor: Interceptor,
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        noInternetConnectInterceptor: NoInternetConnectInterceptor
+    ): OkHttpClient {
+        return OkHttpClient().newBuilder()
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(15, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.SECONDS)
+            .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(noInternetConnectInterceptor)
+            .addInterceptor(StethoInterceptor())
+            .addNetworkInterceptor(interceptor)
+            .build()
+    }
+
+    @Provides
+    fun internetConnectionInterceptor(context: Context): NoInternetConnectInterceptor {
+        return NoInternetConnectInterceptor(context)
+    }
 }
