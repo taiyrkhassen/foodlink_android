@@ -1,6 +1,7 @@
 package com.example.foodlink_android
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -12,7 +13,7 @@ import com.example.foodlink_android.feature.registration.presentation.Registrati
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
-class SplashActivity : BaseActivity(){
+class SplashActivity : BaseActivity() {
 
     init {
         DaggerServiceComponent.builder()
@@ -31,30 +32,32 @@ class SplashActivity : BaseActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_activity)
-        checkFirstIn()
-        viewModel.stateLiveData.observe(this, Observer { result->
-            when(result){
-                is SplashViewModel.State.Result ->{
-                    if(result.isFirstTime){
-                        RegistrationActivityContainer.start(this)
-                        finishAffinity()
-                        overridePendingTransition(0, 0)
-                    } else {
-                        CommonMainActivity.start(this, page = TAB to 4)
-                        finishAffinity()
-                        overridePendingTransition(0, 0)
+
+        Handler().postDelayed({
+            checkFirstIn()
+            viewModel.stateLiveData.observe(this, Observer { result ->
+                when (result) {
+                    is SplashViewModel.State.Result -> {
+                        if (result.isFirstTime) {
+                            RegistrationActivityContainer.start(this)
+                            finish()
+                            overridePendingTransition(0, 0)
+                        } else {
+                            CommonMainActivity.start(this, page = TAB to 4)
+                            finish()
+                            overridePendingTransition(0, 0)
+                        }
+                    }
+                    is SplashViewModel.State.Error -> {
+                        toast(result.messageError)
                     }
                 }
-                is SplashViewModel.State.Error ->{
-                    toast(result.messageError)
-                }
-            }
-
-        })
+            })
+        }, 2000)
 
     }
 
-    private fun checkFirstIn(){
+    private fun checkFirstIn() {
         viewModel.checkAuth()
     }
 }

@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/logo_mini"
+        android:layout_width="57dp"
+        android:layout_height="42dp"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="184dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/logo_mini"
+        android:textSize="20sp"
+        android:textFontWeight="500"
+        android:text="FoodLink"
+        android:fontFamily="@font/quicksand_light"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:textColor="#232323"
+        android:id="@+id/email"
+        android:layout_width="305dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_edit_text"
+        android:drawableRight="@drawable/ic_disable_next"
+        android:fontFamily="@font/roboto"
+        android:hint="Введите email"
+        android:textColorHint="#C4C4C4"
+        android:textSize="14sp"
+        android:paddingStart="15dp"
+        android:drawablePadding="3dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:drawableEnd="@drawable/ic_disable_next"
+        android:paddingLeft="15dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

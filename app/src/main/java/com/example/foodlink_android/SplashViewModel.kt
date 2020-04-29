@@ -1,5 +1,6 @@
 package com.example.foodlink_android
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.foodlink_android.common.base.BaseViewModel
@@ -14,7 +15,7 @@ class SplashViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val state = MediatorLiveData<State>()
-    val stateLiveData by lazy {  MutableLiveData<State>()  }
+    val stateLiveData:LiveData<State> = state
     fun checkAuth() {
         addDisposable(
             authRepo.checkIsAuthorised()
