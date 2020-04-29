@@ -21,7 +21,7 @@ class CommonMainActivity: BaseActivity() {
             flag: Int? = null,
             page: Pair<String, Int>? = null
         ) {
-            val intent = Intent(context, RegistrationActivityContainer::class.java)
+            val intent = Intent(context, CommonMainActivity::class.java)
             if (bundle != null) {
                 intent.putExtras(bundle)
             }

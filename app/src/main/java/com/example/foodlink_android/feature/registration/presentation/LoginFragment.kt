@@ -84,6 +84,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun openNext() {
-        (activity as RegistrationActivityContainer).openFragment(VerifyEmailFragment.newInstance())
+        (activity as RegistrationActivityContainer).openFragment(VerifyEmailFragment.newInstance(), true)
     }
 }

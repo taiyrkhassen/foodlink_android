@@ -73,4 +73,7 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
 
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    //shadow imageview
+    implementation 'com.yinglan.shadowimageview:shadowimageview:1.0.4'
 }

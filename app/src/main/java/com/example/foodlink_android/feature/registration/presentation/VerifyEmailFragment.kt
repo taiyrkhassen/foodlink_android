@@ -59,6 +59,7 @@ class VerifyEmailFragment: Fragment(){
                 openNext()
             }
         }
+
         timerCountDown = object : CountDownTimer((59 * 1000).toLong(), 1000) {
             override fun onFinish() {
                 if (this@VerifyEmailFragment.isVisible) {
