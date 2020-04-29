@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomEditText" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">#E5E5E5</item>
+        <item name="colorControlActivated">#E5E5E5</item>
+        <item name="colorControlHighlight">#E5E5E5</item>
+    </style>
+
 </resources>
