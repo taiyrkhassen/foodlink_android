@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.foodlink_android.R
 import com.example.foodlink_android.common.base.BaseActivity
 import com.example.foodlink_android.common.base.NavigationAnimation
+import com.example.foodlink_android.common.constants.ApplicationConstants
 import com.example.foodlink_android.common.helpers.changeFragment
 import com.example.foodlink_android.feature.CommonMainActivity
 
@@ -40,7 +41,7 @@ class RegistrationActivityContainer: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registration_container_activity)
-        openFragment(LoginFragment.newInstance())
+        openFragment(LoginFragment.newInstance(), true)
     }
 
 
@@ -76,11 +77,5 @@ class RegistrationActivityContainer: BaseActivity() {
             if (addToStack) NavigationAnimation.SLIDE else NavigationAnimation.NONE
         )
     }
-
-    fun finishAuth() {
-        finish()
-        CommonMainActivity.start(this)
-    }
-
 
 }

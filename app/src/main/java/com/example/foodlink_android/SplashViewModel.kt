@@ -2,10 +2,8 @@ package com.example.foodlink_android
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.foodlink_android.common.base.BaseViewModel
 import com.example.foodlink_android.repositories.RepositoryAuthImpl
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
