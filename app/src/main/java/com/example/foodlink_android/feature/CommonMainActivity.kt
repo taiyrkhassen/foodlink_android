@@ -11,9 +11,31 @@ import com.example.foodlink_android.common.base.NavigationAnimation
 import com.example.foodlink_android.common.constants.ApplicationConstants
 import com.example.foodlink_android.feature.profile.ProfileFragment
 import com.example.foodlink_android.feature.registration.presentation.RegistrationActivityContainer
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.common_activity.*
 
 class CommonMainActivity: BaseActivity() {
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.cook -> {
 
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.dishes -> {
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.orders -> {
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                openFragment()
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
     companion object {
         fun start(
             context: Context?,
@@ -58,6 +80,7 @@ class CommonMainActivity: BaseActivity() {
         fragmentsHashMap.put(4, ProfileFragment.newInstance(intent.extras))
         setContentView(R.layout.common_activity)
         openFragment()
+        common_activity_bottom_nav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
 
