@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E5E5">
 
-
     <FrameLayout
         android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="230dp"
-        android:background="#E67259">
+        android:background="#E67259"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/avatar_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_placeholder_new" />
+            android:src="@drawable/stephany"
+            app:civ_border_color="#ffffff"
+            app:civ_border_width="3dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="wrap_content"
@@ -30,323 +32,99 @@
 
     </FrameLayout>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="335dp"
         android:layout_height="275dp"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/card_fill"
+        android:layout_marginTop="178dp"
         android:background="@drawable/rounded_data_filling"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="top|center_horizontal"
         android:paddingStart="20dp"
         android:paddingEnd="20dp">
 
-        <androidx.core.widget.NestedScrollView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <EditText
+                android:id="@+id/last_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Khassen"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_mail"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Last Name"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_smile"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Taiyr"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/last_name" />
 
-                <EditText
-                    android:id="@+id/first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_smile"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="First Name"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toBottomOf="@id/last_name" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_address"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Almaty"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/first_name" />
 
-                <EditText
-                    android:id="@+id/address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_address"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Address"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toBottomOf="@id/first_name" />
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="+7 708 964 28 81"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <EditText
-                    android:id="@+id/phone_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_phone"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Phone Number"
-                    android:inputType="number"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toBottomOf="@id/address" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="#000"
-        app:layout_constraintBottom_toTopOf="@id/history_orders"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="15dp"
-        android:text="История заказов"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#3092EC"
-        app:layout_constraintBottom_toTopOf="@id/history_orders"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginVertical="15dp"
-        android:text="Просмотреть все"
-
-        />
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/history_orders"
-        app:layout_constraintTop_toBottomOf="@id/card_fill"
-        android:layout_marginTop="80dp"
-        android:orientation="horizontal"
-
-        >
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            app:cardElevation="0dp"
-            app:cardCornerRadius="8dp"
-            android:layout_marginHorizontal="10dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="#fff"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Чизбургер"
-                    android:textColor="#000"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="22 апреля"
-                    android:textSize="10sp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19:30"
-                    android:textSize="10sp"
-
-                    />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            app:cardElevation="0dp"
-            android:background="#fff"
-
-            app:cardCornerRadius="8dp"
-            android:layout_marginHorizontal="10dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Чизбургер"
-                    android:textColor="#000"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="22 апреля"
-                    android:textSize="10sp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19:30"
-                    android:textSize="10sp"
-
-                    />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="80dp"
-            android:background="#fff"
-
-            android:layout_height="120dp"
-            app:cardElevation="0dp"
-            app:cardCornerRadius="8dp"
-            android:layout_marginHorizontal="10dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Чизбургер"
-                    android:textColor="#000"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="22 апреля"
-                    android:textSize="10sp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19:30"
-                    android:textSize="10sp"
-
-                    />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            app:cardElevation="0dp"
-            android:background="#fff"
-            app:cardCornerRadius="8dp"
-            android:layout_marginHorizontal="10dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Чизбургер"
-                    android:textColor="#000"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="22 апреля"
-                    android:textSize="10sp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19:30"
-                    android:textSize="10sp"
-
-                    />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            app:cardElevation="0dp"
-            app:cardCornerRadius="8dp"
-            android:layout_marginHorizontal="10dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Чизбургер"
-                    android:textColor="#000"
-
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="22 апреля"
-                    android:textSize="10sp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19:30"
-                    android:textSize="10sp"
-
-                    />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="290dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_show"
+        android:layout_marginBottom="24dp"/>
+</FrameLayout>
