@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,58 +7,62 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:background="#E67259"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/container_data">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/avatar_profile"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:src="@drawable/stephany"
-            app:civ_border_color="#ffffff"
-            app:civ_border_width="3dp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="#E67259"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="26dp"
-            android:src="@drawable/ic_add_avatar" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar_profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:src="@drawable/stephany"
+                app:civ_border_color="#ffffff"
+                app:civ_border_width="3dp" />
 
-    </FrameLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/ic_add_avatar" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="335dp"
-        android:layout_height="275dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="178dp"
-        android:background="@drawable/rounded_data_filling"
-        android:gravity="top|center_horizontal"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        </FrameLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="178dp"
+            android:background="@drawable/rounded_data_filling"
+            android:gravity="top|center_horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="30dp">
 
             <EditText
                 android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:drawableStart="@drawable/ic_mail"
                 android:drawableEnd="@drawable/ic_edit"
                 android:drawablePadding="15dp"
                 android:fontFamily="@font/roboto"
-                android:hint="Khassen"
                 android:padding="15dp"
+                android:text="Khassen"
                 android:textColor="#232323"
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
@@ -74,8 +78,8 @@
                 android:drawableEnd="@drawable/ic_edit"
                 android:drawablePadding="15dp"
                 android:fontFamily="@font/roboto"
-                android:hint="Taiyr"
                 android:padding="15dp"
+                android:text="Taiyr"
                 android:textColor="#232323"
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
@@ -91,8 +95,8 @@
                 android:drawableEnd="@drawable/ic_edit"
                 android:drawablePadding="15dp"
                 android:fontFamily="@font/roboto"
-                android:hint="Almaty"
                 android:padding="15dp"
+                android:text="Almaty"
                 android:textColor="#232323"
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
@@ -108,23 +112,51 @@
                 android:drawableEnd="@drawable/ic_edit"
                 android:drawablePadding="15dp"
                 android:fontFamily="@font/roboto"
-                android:hint="+7 708 964 28 81"
                 android:inputType="number"
                 android:padding="15dp"
+                android:text="+7 708 964 28 81"
                 android:textColor="#232323"
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
                 android:theme="@style/CustomEditText"
                 app:layout_constraintTop_toBottomOf="@id/address" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
+    <TextView
+        android:id="@+id/text_all_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/roboto"
+        android:text="История заказов"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/container_data"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="40dp" />
+
+    <TextView
+        android:id="@+id/check_all_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Посмотреть все >"
+        android:textColor="#3092EC"
+        app:layout_constraintTop_toBottomOf="@+id/container_data"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="40dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/order_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="290dp"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_show"
-        android:layout_marginBottom="24dp"/>
-</FrameLayout>
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_all_orders" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
