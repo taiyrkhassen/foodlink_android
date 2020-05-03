@@ -60,8 +60,8 @@
                 android:paddingBottom="30dp">
 
                 <EditText
-                    android:clickable="true"
-                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:tag="1"
                     android:id="@+id/last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/last_name"/>
 
                 <EditText
-
+                    android:tag="2"
                     android:id="@+id/first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,6 +118,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/first_name"/>
 
                 <EditText
+                    android:tag="3"
                     android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -146,6 +147,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/address"/>
 
                 <EditText
+                    android:tag="4"
                     android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -213,7 +215,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_all_orders"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="29dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
