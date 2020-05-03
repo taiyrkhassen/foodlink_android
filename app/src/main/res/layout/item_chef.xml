@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#fff"
+    android:layout_marginBottom="12dp"
+    android:layout_height="100dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chefs_ava"
+        android:layout_width="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="22dp"
+        android:layout_height="70dp"
+        android:src="@drawable/my_photo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chefs_ava"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:text="Taiyr Khassenov"
+            android:id="@+id/chef_name"/>
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:maxWidth="190dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintTop_toBottomOf="@+id/chef_name"
+            app:layout_constraintStart_toEndOf="@+id/chefs_ava"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginStart="16dp"
+            android:text="description , what chef cooks , his/her specialization "
+            android:id="@+id/chef_description"/>
+
+        <TextView
+            android:id="@+id/number_orders"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="9dp"
+            android:fontFamily="@font/roboto"
+            android:text="120 orders"
+            android:textColor="@color/disable"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chef_description" />
+
+        <RatingBar
+            android:theme="@style/MyRatingBar"
+            android:isIndicator="true"
+            android:rating="5.0"
+            android:id="@+id/rating_chef"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="15dp"
+            android:numStars="6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

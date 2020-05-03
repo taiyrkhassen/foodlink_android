@@ -14,4 +14,10 @@
         <item name="colorControlHighlight">#E5E5E5</item>
     </style>
 
+    <style name="MyRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#F2C94C</item>
+        <item name="colorControlActivated">#F2C94C</item>
+    </style>
+
+
 </resources>
