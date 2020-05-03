@@ -2,7 +2,9 @@ package com.example.foodlink_android.common.helpers
 
 import android.app.Activity
 import android.content.Context
+import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -71,3 +73,4 @@ fun Activity.hideKeyboard() {
         imm.hideSoftInputFromWindow(getWindowToken(), 0)
     }
 }
+
