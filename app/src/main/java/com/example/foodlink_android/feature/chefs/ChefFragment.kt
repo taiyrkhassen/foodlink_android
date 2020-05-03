@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodlink_android.R
 import com.example.foodlink_android.common.adapters.ChefAdapter
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ChefFragment : Fragment() {
 
@@ -41,6 +42,9 @@ class ChefFragment : Fragment() {
     private fun bind(view: View) = with(view) {
         recyclerChef = findViewById(R.id.recycler_chefs)
         filter = findViewById(R.id.filter)
+        filter.setOnClickListener {
+            showDialogFilter()
+        }
         adapterChef = ChefAdapter(generateTestChefs())
         recyclerChef.apply {
             layoutManager = LinearLayoutManager(
@@ -52,8 +56,51 @@ class ChefFragment : Fragment() {
         }
     }
 
+    private fun showDialogFilter(){
+        val view = layoutInflater.inflate(R.layout.dialog_content, null)
+        val dialog = BottomSheetDialog(activity!!)
+        dialog.setContentView(view)
+        dialog.show()
+
+    }
+
     private fun generateTestChefs(): ArrayList<ChefData> {
         return arrayListOf(
+            ChefData(
+                null,
+                "Taiyr Khassenov",
+                "I'm so sad and feel lonely",
+                6.0f,
+                121
+            ),
+            ChefData(
+                null,
+                "Taiyr Khassenov",
+                "I'm so sad and feel lonely",
+                6.0f,
+                121
+            ),
+            ChefData(
+                null,
+                "Taiyr Khassenov",
+                "I'm so sad and feel lonely",
+                6.0f,
+                121
+            ),
+            ChefData(
+                null,
+                "Taiyr Khassenov",
+                "I'm so sad and feel lonely",
+                6.0f,
+                121
+            ),
+            ChefData(
+                null,
+                "Taiyr Khassenov",
+                "I'm so sad and feel lonely",
+                6.0f,
+                121
+            ),
             ChefData(
                 null,
                 "Taiyr Khassenov",

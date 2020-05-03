@@ -19,5 +19,15 @@
         <item name="colorControlActivated">#F2C94C</item>
     </style>
 
+    <style name="BottomSheetGray" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
+    <style name="BaseGrayBottomSheetDialogLight" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheetGray</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
 
 </resources>
