@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
                         if (s.length > 5) {
                             setCompoundDrawablesWithIntrinsicBounds(null, null,imgAvailable, null)
                             setOnTouchListener { v, event ->
-                               var DRAWABLE_RIGHT = 2
+                               val DRAWABLE_RIGHT = 2
                                 if(event.getAction() == MotionEvent.ACTION_UP) {
                                     if(event.rawX >= (right - compoundDrawables[DRAWABLE_RIGHT].bounds.width())) {
                                         openNext()

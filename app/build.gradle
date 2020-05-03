@@ -17,7 +17,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -72,8 +72,12 @@ dependencies {
     //stetho
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
 
+    //circle image
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
-    //shadow imageview
-    implementation 'com.yinglan.shadowimageview:shadowimageview:1.0.4'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

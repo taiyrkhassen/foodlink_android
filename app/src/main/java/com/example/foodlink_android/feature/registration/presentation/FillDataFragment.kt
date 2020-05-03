@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import com.example.foodlink_android.R
 import com.example.foodlink_android.common.constants.ApplicationConstants
 import com.example.foodlink_android.feature.CommonMainActivity
-import com.yinglan.shadowimageview.ShadowImageView
 import de.hdodenhof.circleimageview.CircleImageView
 
 class FillDataFragment : Fragment() {

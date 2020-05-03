@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#E5E5E5">
 
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="230dp"
@@ -30,88 +29,89 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="335dp"
-        android:layout_height="275dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="178dp"
         android:background="@drawable/rounded_data_filling"
         android:gravity="top|center_horizontal"
         android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="30dp">
 
-        <androidx.core.widget.NestedScrollView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <EditText
+                android:id="@+id/last_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Last Name"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_mail"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Last Name"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_smile"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="First Name"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/last_name" />
 
-                <EditText
-                    android:id="@+id/first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_smile"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="First Name"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toBottomOf="@id/last_name" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_address"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Address"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/first_name" />
 
-                <EditText
-                    android:id="@+id/address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_address"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Address"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toBottomOf="@id/first_name" />
-
-                <EditText
-                    android:id="@+id/phone_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:drawableStart="@drawable/ic_phone"
-                    android:drawablePadding="15dp"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Phone Number"
-                    android:inputType="number"
-                    android:padding="15dp"
-                    android:textColor="#232323"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    android:theme="@style/CustomEditText"
-                    app:layout_constraintTop_toBottomOf="@id/address" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.core.widget.NestedScrollView>
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -9,31 +9,41 @@ import com.example.foodlink_android.R
 import com.example.foodlink_android.common.base.BaseActivity
 import com.example.foodlink_android.common.base.NavigationAnimation
 import com.example.foodlink_android.common.constants.ApplicationConstants
+import com.example.foodlink_android.common.helpers.changeFragment
+import com.example.foodlink_android.feature.birja.BirjaFragment
+import com.example.foodlink_android.feature.chefs.ChefFragment
 import com.example.foodlink_android.feature.profile.ProfileFragment
 import com.example.foodlink_android.feature.registration.presentation.RegistrationActivityContainer
+import com.example.foodlink_android.feature.status_order.StatusFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.common_activity.*
 
-class CommonMainActivity: BaseActivity() {
+class CommonMainActivity : BaseActivity() {
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.cook -> {
-                return@OnNavigationItemSelectedListener true
+    private lateinit var navBar: BottomNavigationView
+
+    private val mOnNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.chefs -> {
+                    showFragment(ApplicationConstants.CHEFS_FRAGMENT_NUMBER, null)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.birja -> {
+                    showFragment(ApplicationConstants.BIRJA_FRAGMENT_NUMBER, null)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.orders -> {
+                    showFragment(ApplicationConstants.STATUS_ORDER_FRAGMENT_NUMBER, null)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.profile -> {
+                    showFragment(ApplicationConstants.PROFILE_FRAGMENT_NUMBER, null)
+                    return@OnNavigationItemSelectedListener true
+                }
             }
-            R.id.dishes -> {
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.orders -> {
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.profile -> {
-                openFragment()
-                return@OnNavigationItemSelectedListener true
-            }
+            false
         }
-        false
-    }
 
     companion object {
         fun start(
@@ -49,20 +59,19 @@ class CommonMainActivity: BaseActivity() {
             if (flag != null) {
                 intent.setFlags(flag)
             }
-            if(page!=null){
-                when(page.second){
-                    1 ->{
-                        //change to 1st fragment
-                        intent.putExtra( ApplicationConstants.PROFILE_FRAGMENT, 4)
+            if (page != null) {
+                when (page.second) {
+                    1 -> {
+                        intent.putExtra(ApplicationConstants.FRAGMENT_NUMBER, 0)
                     }
-                    2 ->{
-                        intent.putExtra( ApplicationConstants.PROFILE_FRAGMENT, 4)
+                    2 -> {
+                        intent.putExtra(ApplicationConstants.FRAGMENT_NUMBER, 1)
                     }
-                    3->{
-                        intent.putExtra( ApplicationConstants.PROFILE_FRAGMENT, 4)
+                    3 -> {
+                        intent.putExtra(ApplicationConstants.FRAGMENT_NUMBER, 2)
                     }
-                    4->{
-                        intent.putExtra( ApplicationConstants.PROFILE_FRAGMENT, 4)
+                    4 -> {
+                        intent.putExtra(ApplicationConstants.FRAGMENT_NUMBER, 3)
                     }
                 }
             }
@@ -76,36 +85,33 @@ class CommonMainActivity: BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        fragmentsHashMap.put(4, ProfileFragment.newInstance(intent.extras))
         setContentView(R.layout.common_activity)
+        setData()
         openFragment()
-        common_activity_bottom_nav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        common_activity_bottom_nav?.setOnNavigationItemReselectedListener {}
     }
 
 
-    private fun openFragment(){
-        common_activity_bottom_nav?.menu?.getItem(3)?.setChecked(true)
-        val fragment = intent.extras?.getInt(ApplicationConstants.PROFILE_FRAGMENT)
+    private fun openFragment() {
+        navBar.menu.getItem(3)?.isChecked = true
+        val fragment = intent.extras?.getInt(ApplicationConstants.FRAGMENT_NUMBER)
         if (fragment != null) {
             showFragment(fragment, intent.extras)
         } else {
-            showFragment(4, intent.extras)
+            showFragment(ApplicationConstants.PROFILE_FRAGMENT_NUMBER, intent.extras)
         }
 
     }
 
-    private fun showFragment(screen: Int, data: Bundle? = null){
+    private fun showFragment(screen: Int, data: Bundle? = null) {
         fragmentsHashMap.get(screen)?.let {
             it.arguments = data
             val transaction = supportFragmentManager.beginTransaction()
                 .replace(R.id.common_container, it, null)
-            // todo check
             transaction.commitAllowingStateLoss()
-            // supportFragmentManager.executePendingTransactions()
         }
 
     }
+
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount > 0) {
             supportFragmentManager.popBackStack()
@@ -113,5 +119,28 @@ class CommonMainActivity: BaseActivity() {
             super.onBackPressed()
             overridePendingTransition(R.anim.stay, R.anim.slide_down)
         }
+    }
+
+    private fun setData() {
+        navBar = findViewById(R.id.common_activity_bottom_nav)
+        navBar.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navBar.setOnNavigationItemReselectedListener {}
+
+        fragmentsHashMap.put(
+            ApplicationConstants.CHEFS_FRAGMENT_NUMBER,
+            ChefFragment.newInstance(intent.extras)
+        )
+        fragmentsHashMap.put(
+            ApplicationConstants.BIRJA_FRAGMENT_NUMBER,
+            BirjaFragment.newInstance(intent.extras)
+        )
+        fragmentsHashMap.put(
+            ApplicationConstants.STATUS_ORDER_FRAGMENT_NUMBER,
+            StatusFragment.newInstance(intent.extras)
+        )
+        fragmentsHashMap.put(
+            ApplicationConstants.PROFILE_FRAGMENT_NUMBER,
+            ProfileFragment.newInstance(intent.extras)
+        )
     }
 }
