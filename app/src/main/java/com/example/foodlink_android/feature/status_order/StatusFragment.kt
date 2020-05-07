@@ -40,7 +40,7 @@ class StatusFragment : Fragment() {
     private fun bindViews(view: View) = with(view) {
         listRecycler = findViewById(R.id.list_status_orders)
         adapterOrder = StatusOrderAdapter(generateTestData())
-        adapterOrder.setClickInfo(object : StatusOrderAdapter.ClickListenerInfo{
+        adapterOrder.setClickInfo(object : StatusOrderAdapter.ClickListenerInfo {
             override fun infoClick() {
                 toast("Вытащим диалог!")
             }
@@ -56,49 +56,48 @@ class StatusFragment : Fragment() {
         }
     }
 
-    private fun generateTestData(): ArrayList<StatusOrder> {
-        return arrayListOf(
-            StatusOrder(
-                7600,
-                descriptionOrder = "Двойной бургер с фри кола...",
-                imageBig = null,
-                time = "15:24",
-                imageChef = null,
-                status = 2
-            ),
-            StatusOrder(
-                6800,
-                descriptionOrder = "Пицца и немного бургера с колой",
-                imageBig = null,
-                time = "12:30",
-                imageChef = null,
-                status = 3
-            ),
-            StatusOrder(
-                5400,
-                descriptionOrder = "Что-то что можно скушать и не голодать",
-                imageBig = null,
-                time = "15:24",
-                imageChef = null,
-                status = 4
-            ),
-            StatusOrder(
-                720,
-                descriptionOrder = "Двойной бургер с фри кола...",
-                imageBig = null,
-                time = "10:11",
-                imageChef = null,
-                status = 3
-            ),
-            StatusOrder(
-                7600,
-                descriptionOrder = "Двойной бургер с фри кола...",
-                imageBig = null,
-                time = "15:24",
-                imageChef = null,
-                status = 3
-            )
-
+    private fun generateTestData(): ArrayList<StatusOrder> = arrayListOf(
+        StatusOrder(
+            7600,
+            descriptionOrder = "Двойной бургер с фри кола...",
+            imageBig = null,
+            time = "15:24",
+            imageChef = null,
+            status = 2
+        ),
+        StatusOrder(
+            6800,
+            descriptionOrder = "Пицца и немного бургера с колой",
+            imageBig = null,
+            time = "12:30",
+            imageChef = null,
+            status = 3
+        ),
+        StatusOrder(
+            5400,
+            descriptionOrder = "Что-то что можно скушать и не голодать",
+            imageBig = null,
+            time = "15:24",
+            imageChef = null,
+            status = 3
+        ),
+        StatusOrder(
+            720,
+            descriptionOrder = "Двойной бургер с фри кола...",
+            imageBig = null,
+            time = "10:11",
+            imageChef = null,
+            status = 4
+        ),
+        StatusOrder(
+            7600,
+            descriptionOrder = "Двойной бургер с фри кола...",
+            imageBig = null,
+            time = "15:24",
+            imageChef = null,
+            status = 4
         )
-    }
+
+    )
+
 }
