@@ -23,7 +23,8 @@
             android:layout_gravity="center"
             android:layout_marginStart="26dp"
             android:layout_marginTop="26dp"
-            android:src="@drawable/ic_add_avatar" />
+            android:src="@drawable/ic_add_avatar"
+            android:layout_marginLeft="26dp" />
 
     </FrameLayout>
 
@@ -58,7 +59,9 @@
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
                 android:theme="@style/CustomEditText"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawableRight="@drawable/ic_edit"
+                android:drawableLeft="@drawable/ic_mail" />
 
             <EditText
                 android:id="@+id/first_name"
@@ -75,7 +78,9 @@
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
                 android:theme="@style/CustomEditText"
-                app:layout_constraintTop_toBottomOf="@id/last_name" />
+                app:layout_constraintTop_toBottomOf="@id/last_name"
+                android:drawableLeft="@drawable/ic_smile"
+                android:drawableRight="@drawable/ic_edit" />
 
             <EditText
                 android:id="@+id/address"
@@ -92,7 +97,9 @@
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
                 android:theme="@style/CustomEditText"
-                app:layout_constraintTop_toBottomOf="@id/first_name" />
+                app:layout_constraintTop_toBottomOf="@id/first_name"
+                android:drawableLeft="@drawable/ic_address"
+                android:drawableRight="@drawable/ic_edit" />
 
             <EditText
                 android:id="@+id/phone_number"
@@ -110,7 +117,9 @@
                 android:textColorHint="#C4C4C4"
                 android:textSize="14sp"
                 android:theme="@style/CustomEditText"
-                app:layout_constraintTop_toBottomOf="@id/address" />
+                app:layout_constraintTop_toBottomOf="@id/address"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawableRight="@drawable/ic_edit" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
