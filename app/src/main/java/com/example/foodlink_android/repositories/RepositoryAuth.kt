@@ -18,7 +18,7 @@ class RepositoryAuthImpl @Inject constructor(
 
     override fun checkIsAuthorised(): Single<Boolean> {
         //api vsya huynya tut budet a poka shared
-        return Single.just(true)
+        return Single.just(false)
        // return Single.just(sharedPreferences.getBoolean(ApplicationConstants.USER_NEW, false))
     }
 
