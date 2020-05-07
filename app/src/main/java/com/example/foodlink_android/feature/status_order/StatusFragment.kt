@@ -56,14 +56,14 @@ class StatusFragment : Fragment() {
         }
     }
 
-    private fun generateTestData(): ArrayList<StatusOrder> = arrayListOf(
+    private fun generateTestData(): List<StatusOrder> = arrayListOf(
         StatusOrder(
             7600,
             descriptionOrder = "Двойной бургер с фри кола...",
             imageBig = null,
             time = "15:24",
             imageChef = null,
-            status = 2
+            status = 4
         ),
         StatusOrder(
             6800,
@@ -79,7 +79,7 @@ class StatusFragment : Fragment() {
             imageBig = null,
             time = "15:24",
             imageChef = null,
-            status = 3
+            status = 2
         ),
         StatusOrder(
             720,
@@ -87,7 +87,7 @@ class StatusFragment : Fragment() {
             imageBig = null,
             time = "10:11",
             imageChef = null,
-            status = 4
+            status = 1
         ),
         StatusOrder(
             7600,
@@ -98,6 +98,6 @@ class StatusFragment : Fragment() {
             status = 4
         )
 
-    )
+    ).sortedWith(compareBy { it.status })
 
 }

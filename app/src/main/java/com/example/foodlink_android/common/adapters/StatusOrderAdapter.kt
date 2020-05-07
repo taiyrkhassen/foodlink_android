@@ -11,7 +11,7 @@ import com.example.foodlink_android.feature.status_order.StatusOrder
 import kotlinx.android.synthetic.main.order_status_item.view.*
 
 class StatusOrderAdapter(
-    var ordersList: ArrayList<StatusOrder>? = null
+    var ordersList: List<StatusOrder>? = null
 ) : RecyclerView.Adapter<StatusOrderAdapter.StatusOrderViewHolder>() {
 
     interface ClickListenerInfo {
