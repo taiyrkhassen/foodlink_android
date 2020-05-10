@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodlink_android.R
 import com.example.foodlink_android.common.adapters.StatusOrderAdapter
-import org.jetbrains.anko.support.v4.toast
+import com.example.foodlink_android.feature.CommonMainActivity
 
 class StatusFragment : Fragment() {
 
@@ -42,7 +42,7 @@ class StatusFragment : Fragment() {
         adapterOrder = StatusOrderAdapter(generateTestData())
         adapterOrder.setClickInfo(object : StatusOrderAdapter.ClickListenerInfo {
             override fun infoClick() {
-                toast("Вытащим диалог!")
+                openInfoDialog()
             }
 
         })
@@ -54,6 +54,11 @@ class StatusFragment : Fragment() {
                 false
             )
         }
+    }
+
+    private fun openInfoDialog(){
+        val dialog = StatusDialogHelperInformation()
+        dialog.show(childFragmentManager, dialog::class.java.name)
     }
 
     private fun generateTestData(): List<StatusOrder> = arrayListOf(

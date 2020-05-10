@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foodlink_android.R
 import com.example.foodlink_android.common.base.NavigationAnimation
 
-
-
 fun AppCompatActivity.changeFragment(
     layoutId: Int,
     fragment: Fragment,

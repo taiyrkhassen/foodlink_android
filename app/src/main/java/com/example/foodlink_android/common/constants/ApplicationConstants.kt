@@ -8,6 +8,8 @@ object ApplicationConstants {
     val BIRJA_FRAGMENT_NUMBER = 1
     val STATUS_ORDER_FRAGMENT_NUMBER = 2
 
+    val DIALOG_INFORMATION_NUMBER = 5
+
     val FRAGMENT_NUMBER = "FRAGMENT_NUMBER"
 
 

@@ -6,4 +6,5 @@
     <color name="white">#FFFFFF</color>
     <color name="disable">#DADADA</color>
     <color name="black">#000000</color>
+    <color name="dialog_color">#F9F9F9</color>
 </resources>
