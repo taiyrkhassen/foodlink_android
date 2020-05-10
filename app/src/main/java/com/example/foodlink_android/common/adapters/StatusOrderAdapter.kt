@@ -1,5 +1,6 @@
 package com.example.foodlink_android.common.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class StatusOrderAdapter(
     }
 
     inner class StatusOrderViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+        @SuppressLint("SetTextI18n")
         fun bind(item: StatusOrder?) = with(view) {
             if (!item?.imageChef.isNullOrEmpty()) {
                 Glide.with(context)

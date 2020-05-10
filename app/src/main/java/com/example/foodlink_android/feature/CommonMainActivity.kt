@@ -90,7 +90,7 @@ class CommonMainActivity : BaseActivity() {
         openFragment()
     }
 
-
+    //for navbar fragments
     private fun openFragment() {
         navBar.menu.getItem(3)?.isChecked = true
         val fragment = intent.extras?.getInt(ApplicationConstants.FRAGMENT_NUMBER)
@@ -102,6 +102,7 @@ class CommonMainActivity : BaseActivity() {
 
     }
 
+
     private fun showFragment(screen: Int, data: Bundle? = null) {
         fragmentsHashMap.get(screen)?.let {
             it.arguments = data
@@ -110,6 +111,17 @@ class CommonMainActivity : BaseActivity() {
             transaction.commitAllowingStateLoss()
         }
 
+    }
+
+    //for fragments inside this activity
+    fun openFragment(fragment: Fragment, addToStack: Boolean = false) {
+        changeFragment(
+            R.id.auth_container,
+            fragment,
+            fragment.toString(),
+            addToStack,
+            if (addToStack) NavigationAnimation.SLIDE else NavigationAnimation.NONE
+        )
     }
 
     override fun onBackPressed() {

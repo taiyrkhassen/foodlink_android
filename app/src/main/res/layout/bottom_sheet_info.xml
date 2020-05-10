@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp"
+    android:paddingBottom="20dp">
+
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_christ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="21dp"
+        android:fontFamily="@font/roboto"
+        android:text="Информация о заказе"
+        android:textColor="#1E201D"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/close_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="#DCDCDC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_order" />
+
+
+    <TextView
+        android:id="@+id/order_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Двойной бургер с фри кола со льдом + солфетки"
+        android:textColor="#232323"
+        android:textFontWeight="500"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_dialog" />
+
+    <TextView
+        android:id="@+id/time_order_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/roboto"
+        android:text="Время заказа"
+        android:textColor="#C4C4C4"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_info" />
+
+
+    <TextView
+        android:id="@+id/time_order_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:drawableStart="@drawable/ic_clock_dialog"
+        android:drawableLeft="@drawable/ic_clock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="19:30"
+        android:textColor="#232323"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/time_order_text" />
+
+
+    <TextView
+        android:id="@+id/price_order_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/roboto"
+        android:text="Стоимость"
+        android:textColor="#C4C4C4"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/time_order_text"
+        app:layout_constraintTop_toBottomOf="@+id/order_info" />
+
+
+    <TextView
+        android:id="@+id/price_order_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/roboto"
+        android:text="6989 тг"
+        android:textColor="#232323"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/time_order_text"
+        app:layout_constraintTop_toBottomOf="@+id/price_order_text" />
+
+
+    <TextView
+        android:id="@+id/status_ready_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/ic_restaurant"
+        android:drawablePadding="6dp"
+        android:fontFamily="@font/roboto"
+        android:text="Стадии готовности блюда"
+        android:textColor="#C4C4C4"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/time_order_dialog" />
+
+    <ImageView
+        android:id="@+id/image_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_status_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_ready_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_chef_icon"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/roboto"
+        android:paddingTop="5dp"
+        android:text="Повар: Хасенов Таир"
+        android:textColor="#232323"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
