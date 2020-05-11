@@ -36,6 +36,7 @@
             android:fontFamily="@font/roboto"
             android:layout_marginStart="6dp"
             android:textSize="14sp"
+            android:id="@+id/name_surname"
             app:layout_constraintStart_toEndOf="@id/image_avatar"
             app:layout_constraintTop_toTopOf="@id/image_avatar"
             app:layout_constraintBottom_toBottomOf="@id/image_avatar"
@@ -46,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="@id/image_cook"
             app:layout_constraintStart_toStartOf="parent"
             android:text="6540 T"
-
+            android:id="@+id/price"
             android:textSize="24sp"
             android:textStyle="bold"
             android:fontFamily="@font/roboto"
@@ -159,11 +160,11 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/want_it"
                 android:backgroundTint="#FF3689"
                 android:text="Хочу"
                 app:cornerRadius="5dp"
                 android:layout_margin="12dp"
-
                 />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
