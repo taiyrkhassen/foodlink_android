@@ -29,6 +29,7 @@ class FoodLinkApp : Application(){
         super.onCreate()
         createAppComponent()
         createServiceComponent()
+        serviceComponent.getApiService()
     }
 
     private fun createAppComponent() {

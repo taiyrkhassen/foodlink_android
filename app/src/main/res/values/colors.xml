@@ -7,4 +7,5 @@
     <color name="disable">#DADADA</color>
     <color name="black">#000000</color>
     <color name="dialog_color">#F9F9F9</color>
+    <color name="chip_background_selected">#FF7C60</color>
 </resources>
