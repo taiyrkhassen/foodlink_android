@@ -11,8 +11,8 @@ import com.example.foodlink_android.feature.birja.FilterData
 import kotlinx.android.synthetic.main.item_chip.view.*
 import org.jetbrains.anko.backgroundColor
 
-class FilterAdapter :RecyclerView.Adapter<FilterAdapter.FilterViewHolder>(){
-    var listOfFilters = emptyList<FilterData>()
+class FilterAdapter(var listOfFilters : List<FilterData>) :RecyclerView.Adapter<FilterAdapter.FilterViewHolder>(){
+
     class FilterViewHolder(itemview: View):RecyclerView.ViewHolder(itemview){
         fun bind(action:()->Unit){
             itemView.setOnClickListener {
