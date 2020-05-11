@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="#E67259">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_placeholder_new" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="26dp"
+            android:src="@drawable/ic_add_avatar"
+            android:layout_marginLeft="26dp" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="178dp"
+        android:background="@drawable/rounded_data_filling"
+        android:gravity="top|center_horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="30dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Last Name"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawableRight="@drawable/ic_edit"
+                android:drawableLeft="@drawable/ic_mail" />
+
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_smile"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="First Name"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/last_name"
+                android:drawableLeft="@drawable/ic_smile"
+                android:drawableRight="@drawable/ic_edit" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_address"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Address"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/first_name"
+                android:drawableLeft="@drawable/ic_address"
+                android:drawableRight="@drawable/ic_edit" />
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/roboto"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColor="#232323"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                android:theme="@style/CustomEditText"
+                app:layout_constraintTop_toBottomOf="@id/address"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawableRight="@drawable/ic_edit" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/next_fill_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="56dp"
+        android:src="@drawable/ic_fill_data_next" />
+
+</FrameLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/chefs"
+        android:icon="@drawable/ic_cheffs_nav"
+        android:title="Повара"/>
+    <item
+        android:id="@+id/birja"
+        android:icon="@drawable/ic_birja_2"
+        android:title="Биржа"/>
+    <item
+        android:id="@+id/orders"
+        android:icon="@drawable/ic_status_nav"
+        android:title="Заказы"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile_nav_2"
+        android:title="Профиль"/>
+</menu>
