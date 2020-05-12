@@ -8,8 +8,7 @@ import com.example.foodlink_android.R
 import com.example.foodlink_android.feature.birja.BirjaData
 import kotlinx.android.synthetic.main.item_card_birja.view.*
 
-class BirjaAdapter :RecyclerView.Adapter<BirjaAdapter.BirjaHolder>(){
-    var listOfBirjas:List<BirjaData>? = emptyList()
+class BirjaAdapter(var listOfBirjas:List<BirjaData>) :RecyclerView.Adapter<BirjaAdapter.BirjaHolder>(){
 
     class BirjaHolder(val itemview: View):RecyclerView.ViewHolder(itemview){
         fun bind(){
@@ -24,19 +23,18 @@ class BirjaAdapter :RecyclerView.Adapter<BirjaAdapter.BirjaHolder>(){
     }
 
     override fun getItemCount(): Int {
-        return listOfBirjas!!.size
+        return listOfBirjas.size
     }
 
     override fun onBindViewHolder(holder: BirjaHolder, position: Int) {
-//        holder.itemView.image_cook picasso
         var price:Double = 0.0
-        holder.itemView.name_surname.text = listOfBirjas?.get(position)?.chef?.get(0)?.chef_name
-        listOfBirjas?.get(position)?.foods?.forEach{
+        holder.itemView.name_surname.text = listOfBirjas.get(position).chef.get(0).chef_name
+        listOfBirjas.get(position).foods.forEach{
             price+=it.price
         }
         holder.itemView.price.text = price.toString()
-        holder.itemView.time_of_cook.text = listOfBirjas?.get(position)?.time
-        holder.itemView.name_dish.text = listOfBirjas?.get(position)?.foods?.get(0)?.name
+        holder.itemView.time_of_cook.text = listOfBirjas.get(position).time
+        holder.itemView.name_dish.text = listOfBirjas.get(position).foods.get(0).name
         holder.bind()
     }
 }
